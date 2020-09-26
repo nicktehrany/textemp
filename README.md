@@ -6,13 +6,13 @@ and initialize the .tex files with the most basic necessities.
 
 ## Setup
 
-Open your .rc file and add a source of textemp script in there, like so:
+Open your .bashrc or .zshrc or other .*rc file you are using, and source the textemp script in there, like so:
 
 ```bash
 source ~/PATH/TO/FOLDER/textemp
 ```
 
-where ```PATH/TO/FOLDER is the path to where the textemp script is saved.
+where ```/PATH/TO/FOLDER/ is the path to where the textemp script is saved.
 
 ## Execution
 
