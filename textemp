@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+function create_template() {
+    mkdir ${PWD}/$1
+    cp latex/main.bib ${PWD}/$1
+    cp latex/Makefile ${PWD}/$1
+    cp -r latex/images ${PWD}/$1
+    cp -r latex/src ${PWD}/$1
+    copy_main_tex $@
+}
+
+function copy_main_tex() {
+    for arg in "$@"
+    do
+        if [ $arg == "-c" ]; then
+            cp latex/article_main_code.tex ${PWD}/$1/main.tex
+            return
+        fi
+    done
+    cp latex/article_main.tex ${PWD}/$1/main.tex
+}
+
+
+if [ -e ${PWD}/$1 ]; then
+    echo "The folder already exists exists"
+else
+    create_template $@
+fi
