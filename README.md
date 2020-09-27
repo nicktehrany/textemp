@@ -6,13 +6,14 @@ and initialize the .tex files with the most basic necessities.
 
 ## Setup
 
-Open your .bashrc or .zshrc or other .*rc file you are using, and source the textemp script in there, like so:
+Source the textemp script in your .bashrc, .zshrc or other .*rc file you are using, like so:
 
 ```bash
-source ~/PATH/TO/FOLDER/textemp
+source ~/PATH/TO/FOLDER/textemp/textemp
 ```
 
-where /PATH/TO/FOLDER/ is the path to where the textemp script is saved.
+where /PATH/TO/FOLDER/ is the path to where the textemp repository is saved. (Note the repository folder is called textemp,
+as well as the script)
 
 ## Execution
 
