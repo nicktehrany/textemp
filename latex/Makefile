@@ -1,7 +1,5 @@
 DOC = main
-DEPS = main.tex main.bib src/Abstract.tex src/Background.tex src/Benchmarks.tex \
-src/Conclusion.tex src/Discussion.tex src/Evaluation.tex src/Introduction.tex \
-src/Limitations.tex src/Related.tex
+DEPS = main.tex main.bib src/Abstract.tex src/Introduction.tex
 
 .PHONY: all clean
 
