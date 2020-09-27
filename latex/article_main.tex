@@ -1,15 +1,27 @@
 \documentclass{article}
+\usepackage{lipsum}             % Only used for template text
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage[hyphens]{url}
 \usepackage{amsmath}
 
     \title{Latex Template}
-    \author{Authot}
+    \author{Author}
     \date{\today}
 
 \begin{document}
 
 \maketitle
+
+\section*{Abstract}
+\input{src/Abstract.tex}
+\newpage
+
+\section{Introduction}
+\input{src/Introduction.tex}
+
+\section{Background}
+\input{src/Background.tex}
 
 \bibliography{main}
 \bibliographystyle{abbrv}

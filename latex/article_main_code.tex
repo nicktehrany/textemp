@@ -1,6 +1,8 @@
 \documentclass{article}
+\usepackage{lipsum}             % Only used for template text
 \usepackage{graphicx}
 \usepackage[hyphens]{url}
+\usepackage{float}
 \usepackage{amsmath}
 \usepackage{xcolor}
 \usepackage{listings}
@@ -35,13 +37,24 @@
       \evensidemargin 0.37cm
 
     \title{Latex Template}
-    \author{Authot}
+    \author{Author}
     \date{\today}
 
 \begin{document}
 
 \maketitle
 
+\section*{Abstract}
+\input{src/Abstract.tex}
+\newpage
+
+\section{Introduction}
+\input{src/Introduction.tex}
+
+\section{Background}
+\input{src/Background.tex}
+
+\newpage
 \bibliography{main}
 \bibliographystyle{abbrv}
 
