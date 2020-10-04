@@ -21,10 +21,9 @@ function _create_template() {
 }
 
 function textemp() {
-    DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/textemp"
     if [ -e ${PWD}/$1 ]; then
         echo "The folder already exists"
     else
-        _create_template $DIR $@
+        _create_template $TEXTEMP $@
     fi
 }
