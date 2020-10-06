@@ -22,13 +22,28 @@ within my [dotfiles](https://github.com/nicktehrany/dotfiles) repository.
 
 ## Execution
 
-Execution is very simple. There is currently only 1 possible additional flag, besides providing the desired folder name.
-The additional flag is ```-c``` for Code Version, where the latex file will be initialized with basics for code listings
-and style for such listings.
+Execution is very simple. Templates will initialize the folder with basic latex files and a full Makefile for the project.
+There are currently only 4 templates available; article template, article template with code listing style, exercise
+report (handy for multiple exercises in an assignments), and exercise report with code listing style.
 The command would look as follows:
 
 ```bash
-textemp Report -c
+textemp [FOLDER] -[FLAG]
 ```
 
-to create a folder called "Report" with the Code version template.
+with possible flags:
+
+```bash
+a # Article template
+ac # Article with Code template
+e # Exercise report template
+ec # Exercise report with Code template
+```
+
+A possible execution would look as follows,
+
+```bash
+textemp Report -ac
+```
+
+to create a folder called "Report" with the Article Code version template.

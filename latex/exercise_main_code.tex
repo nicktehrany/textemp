@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[hyphens]{url}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{listings}
+
+\definecolor{codegreen}{rgb}{0,0.6,0.1}
+\definecolor{codegray}{rgb}{0.2,0.2,0.2}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+      \textwidth 15cm
+      \textheight 22cm
+      \parindent 10pt
+      \oddsidemargin 0.85cm
+      \evensidemargin 0.37cm
+
+\title{Assignment 1 \\IN4191: Security and Cryptography}
+\author{Nick-Andian Tehrany (5411726)}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% Use \textbf{Exercise 1.} for less obnoxious exercise headings
+\section{Exercise 1.}
+\begin{enumerate}
+    \item [a)] Here we have the answers for exercise 1a, with some code in~\ref{appendix:python_code}.
+
+    \item [b)] As Einstein said,
+          \begin{equation*}
+              \begin{split}
+                  E = mc^2
+              \end{split}
+          \end{equation*}
+\end{enumerate}
+
+\section{Exercise 2.}
+\begin{enumerate}
+    \item [a)]  Exercise 2 will be here. An interesting read on non-volatile memory~\cite{inproceedings:pmemguide}.
+\end{enumerate}
+
+\bibliography{main}
+\bibliographystyle{abbrv}
+
+\appendix
+\section{Python Code}
+\label{appendix:python_code}
+\begin{lstlisting}[language=Python, caption={\raggedright Some python Code.}]
+#!/bin/bash
+
+print("This is some python code.")
+\end{lstlisting}
+
+\end{document}
