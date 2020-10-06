@@ -1,28 +1,26 @@
 #!/usr/bin/env bash
 
 function _copy_main_tex() {
-    for arg in "$@"
-    do
-        if [ "$arg" = "-ac" ]; then
-            cp $1/latex/article_main_code.tex ${PWD}/$2/main.tex
-        elif [ "$arg" = "-ec" ]; then
-            cp $1/latex/exercise_main_code.tex ${PWD}/$2/main.tex
-            return
-        elif [ "$arg" = "-e" ]; then
-            cp $1/latex/exercise_main.tex ${PWD}/$2/main.tex
-            return
-        elif [ "$arg" = "-a" ]; then
-            cp $1/latex/article_main.tex ${PWD}/$2/main.tex
-        fi
-    done
-    cp -r $1/latex/images ${PWD}/$2
-    cp -r $1/latex/src ${PWD}/$2
+
+    if [ "$2" = "-ac" ]; then
+        cp $TEXTEMP/latex/article_main_code.tex ${PWD}/$1/main.tex
+    elif [ "$2" = "-a" ]; then
+        cp $TEXTEMP/latex/article_main.tex ${PWD}/$1/main.tex
+    elif [ "$2" = "-ec" ]; then
+        cp $TEXTEMP/latex/exercise_main_code.tex ${PWD}/$1/main.tex
+        return
+    elif [ "$2" = "-e" ]; then
+        cp $TEXTEMP/latex/exercise_main.tex ${PWD}/$1/main.tex
+        return
+    fi
+    cp -r $TEXTEMP/latex/images ${PWD}/$1
+    cp -r $TEXTEMP/latex/src ${PWD}/$1
 }
 
 function _create_template() {
-    mkdir ${PWD}/$2
-    cp $1/latex/main.bib ${PWD}/$2
-    cp $1/latex/Makefile ${PWD}/$2
+    mkdir ${PWD}/$1
+    cp $TEXTEMP/latex/main.bib ${PWD}/$1
+    cp $TEXTEMP/latex/Makefile ${PWD}/$1
     _copy_main_tex $@
 }
 
@@ -52,6 +50,6 @@ function textemp() {
     elif [ -e ${PWD}/$1 ]; then
         echo "The folder already exists"
     else
-        _create_template $TEXTEMP $@
+        _create_template $@
     fi
 }
