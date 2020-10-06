@@ -52,8 +52,6 @@ function _check_args() {
     return 0
 }
 
-# TODO Fix args, Reset zshrc, Update readme, Push all changes on dotfiles and textemp
-
 function textemp() {
     _check_args $@
     local ret=$?
