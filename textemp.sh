@@ -15,10 +15,6 @@ function _copy_main_tex() {
             cp $1/latex/article_main.tex ${PWD}/$2/main.tex
         fi
     done
-    _cpy_src $@
-}
-
-function _cpy_src() {
     cp -r $1/latex/images ${PWD}/$2
     cp -r $1/latex/src ${PWD}/$2
 }
@@ -27,10 +23,6 @@ function _create_template() {
     mkdir ${PWD}/$2
     cp $1/latex/main.bib ${PWD}/$2
     cp $1/latex/Makefile ${PWD}/$2
-    if [ "$arg" = "-e" ]; then
-        _copy_main_tex $@
-        return
-    fi
     _copy_main_tex $@
 }
 
