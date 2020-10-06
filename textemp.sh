@@ -8,19 +8,21 @@ function _copy_main_tex() {
         cp $TEXTEMP/latex/article_main.tex ${PWD}/$1/main.tex
     elif [ "$2" = "-ec" ]; then
         cp $TEXTEMP/latex/exercise_main_code.tex ${PWD}/$1/main.tex
+        cp $TEXTEMP/latex/Makefile_simp ${PWD}/$1/Makefile
         return
     elif [ "$2" = "-e" ]; then
         cp $TEXTEMP/latex/exercise_main.tex ${PWD}/$1/main.tex
+        cp $TEXTEMP/latex/Makefile_simp ${PWD}/$1/Makefile
         return
     fi
     cp -r $TEXTEMP/latex/images ${PWD}/$1
     cp -r $TEXTEMP/latex/src ${PWD}/$1
+    cp $TEXTEMP/latex/Makefile ${PWD}/$1
 }
 
 function _create_template() {
     mkdir ${PWD}/$1
     cp $TEXTEMP/latex/main.bib ${PWD}/$1
-    cp $TEXTEMP/latex/Makefile ${PWD}/$1
     _copy_main_tex $@
 }
 
