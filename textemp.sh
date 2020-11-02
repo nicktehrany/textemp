@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function _copy_main_tex() {
-
+    cp $TEXTEMP/latex/gitignore ${PWD}/$1/.gitignore
     if [ "$2" = "-ac" ]; then
         cp $TEXTEMP/latex/article_main_code.tex ${PWD}/$1/main.tex
     elif [ "$2" = "-a" ]; then
