@@ -1,3 +1,7 @@
+<a href="https://opensource.org/licenses/MIT">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+</a>
+
 # textemp
 
 I was tired of having to create new folder structure and latex files every time I had to create a new latex project
