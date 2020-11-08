@@ -10,6 +10,12 @@ and initialize the .tex files with the most basic necessities.
 
 ## Setup
 
+Clone the repo anywhere you like,
+
+```bash
+git clone https://github.com/nicktehrany/textemp
+```
+
 Source the textemp script in your .bashrc, .zshrc or other .*rc file you are using, and add an export of the path to the
 textemp folder, like so:
 
