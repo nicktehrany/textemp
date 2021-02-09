@@ -15,4 +15,4 @@ view: report
 	xdg-open $(DOC).pdf
 
 clean:
-	$(RM) $(DOC).pdf *.blg *.bbl *.aux *.log *.dvi *.out
+	$(RM) $(DOC).pdf *.blg *.bbl *.aux *.log *.dvi *.out *.fdb_latexmk *.fls *.synctex.gz
