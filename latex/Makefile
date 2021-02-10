@@ -1,7 +1,7 @@
 DOC = main
 DEPS = main.tex main.bib src/Abstract.tex src/Introduction.tex
 
-.PHONY: all clean
+.PHONY: all clean view
 
 all: report
 
