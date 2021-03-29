@@ -14,6 +14,11 @@ function _copy_main_tex() {
         cp $TEXTEMP/latex/exercise_main.tex ${PWD}/$1/main.tex
         cp $TEXTEMP/latex/Makefile_simp ${PWD}/$1/Makefile
         return
+    elif [ "$2" = "-IEEE" ]; then
+        cp $TEXTEMP/latex/IEEE.tex ${PWD}/$1/main.tex
+        cp $TEXTEMP/latex/cls/IEEEtran.cls ${PWD}/$1/IEEEtran.cls
+        cp $TEXTEMP/latex/Makefile_simp ${PWD}/$1/Makefile
+        return
     fi
     cp -r $TEXTEMP/latex/images ${PWD}/$1
     cp -r $TEXTEMP/latex/src ${PWD}/$1
@@ -35,7 +40,7 @@ function _check_args() {
         return 1
     fi
     case $2 in
-        "-a" || "-ac" || "-e" || "-ec")
+        "-a" || "-ac" || "-e" || "-ec" || "-IEEE")
             :;;
         *)
             echo "Invalid flag"
