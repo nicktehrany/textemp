@@ -32,7 +32,10 @@ function _create_template() {
 }
 
 function _check_args() {
-    if [ $# -ne 2 ]; then
+    if [[ "$1" == -h ]]; then
+        echo "textemp, generate Folders with simple and easy to use LaTeX templates using a single command.\n\nUsage: textemp [FOLDER] -[FLAG]\n\nFLAG options:\n -a\t: Article template for simple Articles\n -ac\t: Article Template with code listings\n -e\t: Exercise Template for Exercises (Good for Uni work)\n -ec\t: Exercise Template with code listings\n -IEEE\t: The IEEE-Trans Template"
+        return 1
+    elif [ $# -ne 2 ]; then
         echo "Invalid number of arguments"
         return 1
     elif [[ "$1" =~ ^- ]]; then
