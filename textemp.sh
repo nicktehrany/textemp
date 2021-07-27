@@ -31,12 +31,22 @@ function _create_template() {
     _copy_main_tex $@
 }
 
+function _check_response(){
+    if [[ "$1" == "Y" || "$1" == "y" ]]; then
+        echo 0
+    elif [[ "$1" == "N" || "$1" == "n" ]]; then
+        echo 1
+    else
+        echo 2
+    fi
+}
+
 function _check_args() {
     if [[ "$1" == -h ]]; then
         echo "textemp, generate Folders with simple and easy to use LaTeX templates using a single command.
-        
+
 Usage: textemp [FOLDER] -[FLAG]
-    
+
 FLAG options:
     -a\t\t: Article template for simple Articles
     -ac\t\t: Article Template with code listings
@@ -67,7 +77,16 @@ function textemp() {
     if [ $ret != 0 ]; then
         return 1
     elif [ -e ${PWD}/$1 ]; then
-        echo "The folder already exists"
+        printf "The folder already exists. Overwrite it? (y/n): "
+        read -r create
+        response=$(_check_response $create)
+        if [[ "$response" == "0" ]]; then
+            rm -r $PWD/$1
+            _create_template $@
+        else
+            echo "Exiting"
+            return 1
+        fi
     else
         _create_template $@
     fi
