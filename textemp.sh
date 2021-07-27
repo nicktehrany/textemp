@@ -4,8 +4,16 @@ function _copy_main_tex() {
     cp $TEXTEMP/latex/gitignore ${PWD}/$1/.gitignore
     if [ "$2" = "-ac" ]; then
         cp $TEXTEMP/latex/article_main_code.tex ${PWD}/$1/main.tex
+        cp -r $TEXTEMP/latex/images ${PWD}/$1
+        cp -r $TEXTEMP/latex/src ${PWD}/$1
+        cp $TEXTEMP/latex/Makefile ${PWD}/$1
+        return
     elif [ "$2" = "-a" ]; then
         cp $TEXTEMP/latex/article_main.tex ${PWD}/$1/main.tex
+        cp -r $TEXTEMP/latex/images ${PWD}/$1
+        cp -r $TEXTEMP/latex/src ${PWD}/$1
+        cp $TEXTEMP/latex/Makefile ${PWD}/$1
+        return
     elif [ "$2" = "-ec" ]; then
         cp $TEXTEMP/latex/exercise_main_code.tex ${PWD}/$1/main.tex
         cp $TEXTEMP/latex/Makefile_simp ${PWD}/$1/Makefile
@@ -20,9 +28,6 @@ function _copy_main_tex() {
         cp $TEXTEMP/latex/Makefile_simp ${PWD}/$1/Makefile
         return
     fi
-    cp -r $TEXTEMP/latex/images ${PWD}/$1
-    cp -r $TEXTEMP/latex/src ${PWD}/$1
-    cp $TEXTEMP/latex/Makefile ${PWD}/$1
 }
 
 function _create_template() {
