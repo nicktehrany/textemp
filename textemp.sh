@@ -67,7 +67,7 @@ FLAG options:
         return 1
     fi
     case $2 in
-        "-a" || "-ac" || "-e" || "-ec" || "-IEEE")
+        "-a" | "-ac" | "-e" | "-ec" | "-IEEE" )
             :;;
         *)
             echo "Invalid flag"
