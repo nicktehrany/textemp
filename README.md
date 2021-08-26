@@ -49,6 +49,7 @@ ac # Article with Code template
 e # Exercise report template
 ec # Exercise report with Code template
 IEEE # For IEEE trans template
+pres # LaTeX beamer presentation template
 ```
 
 A possible execution would look as follows,

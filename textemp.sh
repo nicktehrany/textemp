@@ -3,36 +3,44 @@
 function _copy_main_tex() {
     cp $TEXTEMP/latex/gitignore ${PWD}/$1/.gitignore
     if [ "$2" = "-ac" ]; then
+        cp $TEXTEMP/latex/main.bib ${PWD}/$1
         cp $TEXTEMP/latex/article_main_code.tex ${PWD}/$1/main.tex
         cp -r $TEXTEMP/latex/images ${PWD}/$1
         cp -r $TEXTEMP/latex/src ${PWD}/$1
         cp $TEXTEMP/latex/Makefile ${PWD}/$1
         return
     elif [ "$2" = "-a" ]; then
+        cp $TEXTEMP/latex/main.bib ${PWD}/$1
         cp $TEXTEMP/latex/article_main.tex ${PWD}/$1/main.tex
         cp -r $TEXTEMP/latex/images ${PWD}/$1
         cp -r $TEXTEMP/latex/src ${PWD}/$1
         cp $TEXTEMP/latex/Makefile ${PWD}/$1
         return
     elif [ "$2" = "-ec" ]; then
+        cp $TEXTEMP/latex/main.bib ${PWD}/$1
         cp $TEXTEMP/latex/exercise_main_code.tex ${PWD}/$1/main.tex
         cp $TEXTEMP/latex/Makefile_simp ${PWD}/$1/Makefile
         return
     elif [ "$2" = "-e" ]; then
+        cp $TEXTEMP/latex/main.bib ${PWD}/$1
         cp $TEXTEMP/latex/exercise_main.tex ${PWD}/$1/main.tex
         cp $TEXTEMP/latex/Makefile_simp ${PWD}/$1/Makefile
         return
     elif [ "$2" = "-IEEE" ]; then
+        cp $TEXTEMP/latex/main.bib ${PWD}/$1
         cp $TEXTEMP/latex/IEEE.tex ${PWD}/$1/main.tex
         cp $TEXTEMP/latex/cls/IEEEtran.cls ${PWD}/$1/IEEEtran.cls
         cp $TEXTEMP/latex/Makefile_simp ${PWD}/$1/Makefile
+        return
+    elif [ "$2" = "-pres" ]; then
+        cp $TEXTEMP/latex/presentation-temp.tex ${PWD}/$1/main.tex
+        cp $TEXTEMP/latex/Makefile_pres ${PWD}/$1/Makefile
         return
     fi
 }
 
 function _create_template() {
     mkdir ${PWD}/$1
-    cp $TEXTEMP/latex/main.bib ${PWD}/$1
     _copy_main_tex $@
 }
 
@@ -57,7 +65,8 @@ FLAG options:
     -ac\t\t: Article Template with code listings
     -e\t\t: Exercise Template for Exercises (Good for Uni work)
     -ec\t\t: Exercise Template with code listings
-    -IEEE\t: The IEEE-Trans Template"
+    -IEEE\t: The IEEE-Trans Template
+    -pres\t: LaTeX beamer template presentation"
         return 1
     elif [ $# -ne 2 ]; then
         echo "Invalid number of arguments"
@@ -67,7 +76,7 @@ FLAG options:
         return 1
     fi
     case $2 in
-        "-a" | "-ac" | "-e" | "-ec" | "-IEEE" )
+        "-a" | "-ac" | "-e" | "-ec" | "-IEEE" | "-pres" )
             :;;
         *)
             echo "Invalid flag"

@@ -1,0 +1,16 @@
+DOC = main
+DEPS = main.tex
+
+.PHONY: all clean view
+
+all: report
+
+report: $(DEPS)
+	pdflatex $(DOC).tex
+	pdflatex $(DOC).tex
+
+view: report
+	xdg-open $(DOC).pdf
+
+clean:
+	$(RM) $(DOC).pdf *.blg *.bbl *.aux *.log *.dvi *.fdb_latexmk *.fls *.synctex.gz
