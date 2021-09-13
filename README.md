@@ -20,14 +20,9 @@ Source the textemp script in your .bashrc, .zshrc or other .*rc file you are usi
 textemp folder, like so:
 
 ```bash
-# export the location (change to dir where you have it!)
+# Source and export the location (change to dir where you have it!)
+[ -f $HOME/bin/textemp/textemp.sh ] && source TEXTEMP="$HOME/bin/textemp/textemp.sh"
 [ -d $HOME/bin/textemp ] && export TEXTEMP="$HOME/bin/textemp"
-```
-
-I have mine in `$HOME/bin/` which is also in my `$PATH`, if you don't have that you also need to source the script with
-
-```bash
-[ -f $HOME/path/to/textemp/textemp.sh ] && source $HOME/path/to/textemp/textemp.sh
 ```
 
 If in doubt, have a look at my [.zshrc](https://github.com/nicktehrany/dotfiles/blob/master/zsh/.zshrc), which is contained
