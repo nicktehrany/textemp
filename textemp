@@ -1,7 +1,5 @@
 #!/usr/bin/bash
 
-BGREEN=$'\033[4;32m'
-
 function _copy_main_tex() {
     cp $TEXTEMP/latex/gitignore ${PWD}/$1/.gitignore
     if [ "$2" = "-ac" ]; then
@@ -87,6 +85,7 @@ FLAG options:
     return 0
 }
 
+BGREEN=$'\033[4;32m'
 _check_args $@
 local ret=$?
 if [ $ret != 0 ]; then
