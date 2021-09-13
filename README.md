@@ -10,19 +10,17 @@ and initialize the .tex files with the most basic necessities.
 
 ## Setup
 
-Clone the repo anywhere you like,
+Copy the `textemp` file to your `bin` directory (or source it in your `.bashrc` or `.zshrc`) and export the location of
+this directory.
 
 ```bash
 git clone https://github.com/nicktehrany/textemp
-```
 
-Source the textemp script in your .bashrc, .zshrc or other .*rc file you are using, and add an export of the path to the
-textemp folder, like so:
+# copy the binary to your bin dir
+cp textemp/textemp ~/bin/
 
-```bash
-# Source and export the location (change to dir where you have it!)
-[ -f $HOME/bin/textemp/textemp.sh ] && source TEXTEMP="$HOME/bin/textemp/textemp.sh"
-[ -d $HOME/bin/textemp ] && export TEXTEMP="$HOME/bin/textemp"
+# Export the location (change to dir where you have it!)
+[ -d $HOME/dotfiles/bin/textemp ] && export TEXTEMP="$HOME/dotfiles/bin/textemp"
 ```
 
 If in doubt, have a look at my [.zshrc](https://github.com/nicktehrany/dotfiles/blob/master/zsh/.zshrc), which is contained

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
 BGREEN=$'\033[4;32m'
 
@@ -87,24 +87,22 @@ FLAG options:
     return 0
 }
 
-function textemp() {
-    _check_args $@
-    local ret=$?
-    if [ $ret != 0 ]; then
-        return 1
-    elif [ -e ${PWD}/$1 ]; then
-        printf "The folder already exists. Overwrite it? (y/n): "
-        read -r create
-        response=$(_check_response $create)
-        if [[ "$response" == "0" ]]; then
-            rm -r $PWD/$1
-            _create_template $@
-        else
-            echo "Exiting"
-            return 1
-        fi
-    else
+_check_args $@
+local ret=$?
+if [ $ret != 0 ]; then
+    return 1
+elif [ -e ${PWD}/$1 ]; then
+    printf "The folder already exists. Overwrite it? (y/n): "
+    read -r create
+    response=$(_check_response $create)
+    if [[ "$response" == "0" ]]; then
+        rm -r $PWD/$1
         _create_template $@
+    else
+        echo "Exiting"
+        return 1
     fi
-    printf "${GREEN}Finished setting up template in ${BGREEN}$PWD/$1\n"
-}
+else
+    _create_template $@
+fi
+printf "${GREEN}Finished setting up template in ${BGREEN}$PWD/$1\n"
