@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+BGREEN=$'\033[4;32m'
+
 function _copy_main_tex() {
     cp $TEXTEMP/latex/gitignore ${PWD}/$1/.gitignore
     if [ "$2" = "-ac" ]; then
@@ -104,4 +106,5 @@ function textemp() {
     else
         _create_template $@
     fi
+    printf "${GREEN}Finished setting up template in ${BGREEN}$PWD/$1\n"
 }
