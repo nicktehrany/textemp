@@ -86,9 +86,8 @@ FLAG options:
 }
 
 BGREEN=$'\033[4;32m'
-ret=$(_check_args $@)
-if [ $ret -ne 0 ]; then
-    return 1
+if [[ "$(_check_args $@)" != "0" ]]; then
+    exit 1
 elif [ -e ${PWD}/$1 ]; then
     printf "The folder already exists. Overwrite it? (y/n): "
     read -r create
@@ -98,7 +97,7 @@ elif [ -e ${PWD}/$1 ]; then
         _create_template $@
     else
         echo "Exiting"
-        return 1
+        exit 1
     fi
 else
     _create_template $@
