@@ -10,7 +10,7 @@ and initialize the .tex files with the most basic necessities.
 
 ## Setup
 
-Copy the `textemp` file to your `bin` directory (or source it in your `.bashrc` or `.zshrc`) and export the location of
+Copy the `textemp` file to your `bin` directoryv (I have mine in `$HOME/bin` and this is included in `$PATH`) and export the location of
 this directory.
 
 ```bash
@@ -22,9 +22,6 @@ cp textemp/textemp ~/bin/
 # Export the location (change to dir where you have it!)
 [ -d $HOME/dotfiles/bin/textemp ] && export TEXTEMP="$HOME/dotfiles/bin/textemp"
 ```
-
-If in doubt, have a look at my [.zshrc](https://github.com/nicktehrany/dotfiles/blob/master/zsh/.zshrc), which is contained
-within my [dotfiles](https://github.com/nicktehrany/dotfiles) repository.
 
 ## Execution
 
