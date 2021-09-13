@@ -86,7 +86,8 @@ FLAG options:
 }
 
 BGREEN=$'\033[4;32m'
-if [[ "$(_check_args $@)" != "0" ]]; then
+_check_args $@
+if [ "$?" != "0" ]; then
     exit 1
 elif [ -e ${PWD}/$1 ]; then
     printf "The folder already exists. Overwrite it? (y/n): "
