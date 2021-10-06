@@ -5,7 +5,7 @@ DEPS = main.tex main.bib
 
 all: report
 
-report: $(DEPS)
+report: clean $(DEPS)
 	pdflatex $(DOC).tex
 	bibtex $(DOC).aux
 	pdflatex $(DOC).tex
