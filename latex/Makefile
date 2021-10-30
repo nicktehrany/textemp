@@ -1,7 +1,7 @@
 DOC = main
 DEPS = main.tex main.bib src/Abstract.tex src/Introduction.tex
 
-.PHONY: all clean view
+.PHONY: all clean view spell
 
 all: report
 
@@ -10,6 +10,9 @@ report: clean $(DEPS)
 	bibtex $(DOC).aux
 	pdflatex $(DOC).tex
 	pdflatex $(DOC).tex
+
+spell: *.tex
+	@for file in $?; do aspell --lang=en_US --mode=tex -c $$file; done
 
 view: report
 	xdg-open $(DOC).pdf
