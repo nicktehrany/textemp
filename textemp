@@ -56,7 +56,7 @@ function _check_response(){
 
 function _check_args() {
     if [[ "$1" == -h ]]; then
-        printf "textemp, generate Folders with simple and easy to use LaTeX templates using a single command.\n\nUsage: textemp [FOLDER] -[FLAG]\nFLAG options:\n\t-a\t\t: Article template for simple Articles\n\t-ac\t\t: Article Template with code listings\n\t-e\t\t: Exercise Template for Exercises (Good for Uni work)\n\t-ec\t\t: Exercise Template with code listings\n\t-IEEE\t: The IEEE-Trans Template\n\t-pres\t: LaTeX beamer template presentation\n"
+        printf "textemp, generate Folders with simple and easy to use LaTeX templates using a single command.\n\nUsage: textemp [FOLDER] -[FLAG]\nFLAG options:\n\t-a\t: Article template for simple Articles\n\t-ac\t: Article Template with code listings\n\t-e\t: Exercise Template for Exercises (Good for Uni work)\n\t-ec\t: Exercise Template with code listings\n\t-IEEE\t: The IEEE-Trans Template\n\t-pres\t: LaTeX beamer template presentation\n"
         return 1
     elif [ $# -ne 2 ]; then
         echo "Invalid number of arguments"
